@@ -37,10 +37,6 @@ def add_watermark(image_path, watermark_text, font_size, font_color, position):
 
         # 尝试加载一个默认字体，如果用户没有指定或系统没有，则使用Pillow内置的默认字体
         try:
-            # 常见系统字体路径，你可能需要根据操作系统调整
-            # macOS: /Library/Fonts/Arial.ttf
-            # Windows: C:/Windows/Fonts/arial.ttf
-            # Linux: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
             font_path = "arial.ttf"  # 尝试使用Arial，如果不存在，Pillow会fallback
             font = ImageFont.truetype(font_path, font_size)
         except IOError:
