@@ -1,0 +1,70 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+    
+    - name: Build executable
+      run: |
+        python build.py
+    
+    - name: Create release archive
+      run: |
+        cd dist
+        7z a -tzip ../PhotoWatermark-Windows.zip *
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: PhotoWatermark-Windows
+        path: PhotoWatermark-Windows.zip
+    
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: PhotoWatermark-Windows.zip
+        body: |
+          ## PhotoWatermark Release
+          
+          ### 功能特性
+          - 支持文本和图片水印
+          - 实时预览功能
+          - 批量处理图片
+          - 多种输出格式（PNG, JPEG）
+          - 水印模板保存和加载
+          - 拖拽导入图片
+          
+          ### 使用方法
+          1. 下载并解压 PhotoWatermark-Windows.zip
+          2. 运行 PhotoWatermark.exe
+          3. 导入图片并设置水印
+          4. 导出处理后的图片
+          
+          ### 系统要求
+          - Windows 10 或更高版本
+          - 无需安装Python环境
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

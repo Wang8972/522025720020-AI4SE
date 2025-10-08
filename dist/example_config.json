@@ -1,0 +1,8 @@
+{
+  "watermark_text": "Sample Watermark",
+  "watermark_font_family": "Arial",
+  "watermark_font_size": 36,
+  "watermark_color": "#FFFFFF",
+  "watermark_opacity": 70,
+  "watermark_position": "bottom_right"
+}
