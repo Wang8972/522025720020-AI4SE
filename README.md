@@ -127,8 +127,8 @@
 #### 方法一：直接运行（推荐）
 1. 下载项目文件：
 ```bash
-git clone https://github.com/yourusername/PhotoWatermark.git
-cd PhotoWatermark
+git clone git@github.com:Wang8972/522025720020-AI4SE.git
+cd 522025720020-AI4SE
 ```
 
 2. 安装依赖包：
@@ -237,7 +237,7 @@ PhotoWatermark/
 ├── requirements.txt        # 依赖包列表
 ├── build.py               # 构建脚本
 ├── run.bat                # Windows启动脚本
-├── icon.svg               # 应用程序图标
+├── icon.ico               # 应用程序图标
 ├── README.md              # 项目说明文档
 └── .github/
     └── workflows/
@@ -265,8 +265,8 @@ PhotoWatermark/
 ### 开发环境设置
 1. 克隆项目：
 ```bash
-git clone https://github.com/yourusername/PhotoWatermark.git
-cd PhotoWatermark
+git clone git@github.com:Wang8972/522025720020-AI4SE.git
+cd 522025720020-AI4SE
 ```
 
 2. 创建虚拟环境：
@@ -338,7 +338,7 @@ A: 目前版本支持批量应用相同水印。不同水印需要分别处理�
 
 - **问题报告**：[GitHub Issues](https://github.com/yourusername/PhotoWatermark/issues)
 - **功能建议**：[GitHub Discussions](https://github.com/yourusername/PhotoWatermark/discussions)
-- **邮件联系**：your.email@example.com
+- **邮件联系**：1070923264@qq.com
 
 ---
 
